@@ -40,7 +40,7 @@ class SimpleWalletCLI(cmd.Cmd):
             self.username = username
             self.password = password
 
-    def do_logout(self, arg):
+    def do_logout(self, args):
         """Logout"""
         self.prompt = '(simple wallet)'
         self.username = None
@@ -78,6 +78,7 @@ class SimpleWalletCLI(cmd.Cmd):
             url = '{}{}/{}'.format(self.base_url, self.WALLETS_URI, address)
         else:
             url = '{}{}'.format(self.base_url, self.WALLETS_URI)
+
         with requests.get(url, auth=(self.username, self.password)) as response:
             response.raise_for_status()
             json = response.json()
@@ -132,8 +133,8 @@ class SimpleWalletCLI(cmd.Cmd):
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        url = sys.argv[1]
+        server_url = sys.argv[1]
     else:
-        url = DEFAULT_SERVER_URL
+        server_url = DEFAULT_SERVER_URL
 
-    SimpleWalletCLI(url=url).cmdloop()
+    SimpleWalletCLI(url=server_url).cmdloop()

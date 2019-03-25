@@ -89,7 +89,7 @@ def transfer_funds():
 
     if type(amount) != str or not re.fullmatch(r'\d*?.\d{2}', amount):
         return make_response(
-            jsonify({'error': 'Amount should be string with two decimal points, separeted with dot'}), 400,
+            jsonify({'error': 'Amount should be string with two decimal points, separated with dot'}), 400,
         )
 
     amount = decimal.Decimal(amount)

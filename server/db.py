@@ -13,7 +13,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from werkzeug.security import generate_password_hash
 
-from config import MAX_WALLET_VALUE
 from errors import AlreadyExist, NonEmptyWallet, InsufficientFunds, WalletLimit, TransactionError
 
 db = SQLAlchemy()
