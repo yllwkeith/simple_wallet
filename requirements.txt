@@ -1,0 +1,4 @@
+flask
+flask_httpauth
+flask_sqlalchemy
+requests

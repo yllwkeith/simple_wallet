@@ -1,0 +1,7 @@
+HOST = '127.0.0.1'
+PORT = 5000
+
+DATABASE_URI = 'sqlite:///:memory:'
+
+MAX_WALLET_VALUE = '10.00'
+MIN_TRANSFER_AMOUNT = '0.01'
