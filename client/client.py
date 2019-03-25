@@ -2,7 +2,6 @@ import cmd
 import sys
 
 import requests
-from requests import HTTPError
 
 DEFAULT_SERVER_URL = 'http://127.0.0.1:5000'
 
@@ -124,7 +123,7 @@ class SimpleWalletCLI(cmd.Cmd):
             super().onecmd(line)
         except requests.exceptions.ConnectionError:
             print('Server refuses connection')
-        except HTTPError as e:
+        except requests.exceptions.HTTPError as e:
             error = 'Unknown'
             if e.response.status_code in [400, 401, 409]:
                 error = e.response.json()['error']
