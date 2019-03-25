@@ -119,7 +119,7 @@ def transfer_funds():
 
 
 if __name__ == '__main__':
-    from config import DATABASE_URI, HOST, PORT, MIN_TRANSFER_AMOUNT, MAX_WALLET_VALUE
+    from config import DATABASE_URI, HOST, PORT, DEBUG, MIN_TRANSFER_AMOUNT, MAX_WALLET_VALUE
 
     app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -127,4 +127,4 @@ if __name__ == '__main__':
     app.config['MAX_WALLET_VALUE'] = MAX_WALLET_VALUE
     init_app(app)
 
-    app.run(host=HOST, port=PORT, debug=True)
+    app.run(host=HOST, port=PORT, debug=DEBUG)
